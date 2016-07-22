@@ -13,17 +13,24 @@ $client = new Skiplagged();
 $bounds = $client->getBoundsForAddress('central park, ny');
 echo json_encode($bounds)."\n";
 
-// Log in with a Google or Pokemon Trainer Club account
-//echo json_encode($client->loginWithGoogle('EMAIL', 'PASSWORD'))."\n";
-echo json_encode($client->loginWithPokemonTrainer('USERNAME', 'PASSWORD'))."\n";
+while (1) {
+    try {
+        // Log in with a Google or Pokemon Trainer Club account
+        //echo json_encode($client->loginWithGoogle('EMAIL', 'PASSWORD'))."\n";
+        echo json_encode($client->loginWithPokemonTrainer('USERNAME', 'PASSWORD'))."\n";
 
-// Get specific Pokemon Go API endpoint
-echo $client->getSpecificApiEndpoint()."\n";
+        // Get specific Pokemon Go API endpoint
+        echo $client->getSpecificApiEndpoint()."\n";
 
-// Get profile
-echo json_encode($client->getProfile())."\n";
+        // Get profile
+        echo json_encode($client->getProfile())."\n";
 
-// Find pokemon
-$client->findPokemon($bounds, function($pokemon) {
-    echo $pokemon."\n";
-});
+        // Find pokemon
+        $client->findPokemon($bounds, function($pokemon) {
+            echo $pokemon."\n";
+        });
+    } catch (Exception $e) {
+        \Utils\General::log($e);
+        sleep(1);
+    }
+}
