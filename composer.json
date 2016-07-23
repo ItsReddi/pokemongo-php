@@ -1,0 +1,21 @@
+{
+	"name": "ItsReddi/pokemongo-php",
+	"description": "All credits go to skiplagged/pokemongo-php",
+	"keywords": ["pokemon", "mapping"],
+	"homepage": "https://github.com/ItsReddi/pokemongo-php",
+	"type": "extension",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "",
+			"email": ""
+		}
+	],
+	"require": {
+	},
+	"autoload": {
+		"psr-4": {
+			"ItsReddi\\pokemongo\\": ""
+		}
+	}
+}
